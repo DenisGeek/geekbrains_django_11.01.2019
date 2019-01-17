@@ -1,10 +1,12 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 {% load staticfiles %}
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    {% block metaContent %}
     <meta content="There are cars that are impossible not to love. They are known to almost everyone, even people far from cars.">
+    {% endblock %}
     <title>LCS 1.4 - Main</title>
     <link rel="shortcut icon" href="{% static '/images/logo/companyIcon.png' %}">
     <!--googleFonts-->
@@ -39,17 +41,21 @@
 
         <main class="content">
 
+
             <div>
-                <h1 class="currentPage">Main</h1>
+                <h1 class="currentPage">{% block pageName %}Main{% endblock %}</h1>
                 <hr>
             </div>
 
+
+            {% block content %}
             <p class="intro">
                 There are cars that are impossible not to love. They are known to almost everyone, even people far from
                 cars.
             </p>
-
+            {% endblock %}
         </main>
+
 
         <footer class="footer">
             <hr>
@@ -57,6 +63,7 @@
                 &copy; "All rights reserved"
             </a>
         </footer>
+
     </div>
 </body>
 
