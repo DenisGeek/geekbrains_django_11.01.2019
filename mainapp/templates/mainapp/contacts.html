@@ -14,13 +14,126 @@
           Carter+One|Monoton|Satisfy|Shrikhand|Faster+One|Vast+Shadow|Raleway|Fredericka+the+Great"
           rel="stylesheet">
     <!--hw stile-->
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="/static/styles/style.css">
     <!--fun stile-->
-    <link rel="stylesheet" href="./styles/styleFun.css">
+    <link rel="stylesheet" href="/static/styles/styleFun.css">
 </head>
 
 <body>
-    <iframe scrolling="no" id="preview-viewer" height="1530px" style="transform: scale(0.725);"></iframe>
+
+<header>
+    <div class="storeName">
+        <p>
+            Lovely Cars Store v1.4
+        </p>
+    </div>
+
+    <img src="/static/images/logo/carsShopLogo2.png" alt="Logo"
+         width="300">
+
+
+    <nav>
+        <ul class="navigation">
+            <li><a href="">Main</a></li>
+            <li><a href="products">Catalog</a></li>
+            <li><a href="contact">Contacts</a></li>
+        </ul>
+        <hr>
+    </nav>
+</header>
+
+<div>
+    <h1 class="currentPage">Contacts</h1>
+    <hr>
+</div>
+
+<main>
+    <form class="feedbackForm" action="./cgi-bin/script.py" method="post">
+        <fieldset>
+            <legend>Feedback</legend>
+
+            <input name="feedbackName" type="text" size="25" placeholder="Your Name">
+            <br>
+            <!--https://emailregex.com/-->
+            <input name="feedbackEmail" type="email" required size="25" placeholder="Your Email"
+                   pattern="(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)">
+            <br>
+
+            <input name="feedbackTopic" type="text" size="25" placeholder="Message Topic">
+            <br>
+
+            <label for="feedbackMessage"> Message: <br></label>
+            <textarea name="feedbackMessage" id="feedbackMessage" required cols="27" rows="10"
+                      maxlength="500"></textarea>
+            <br>
+
+            <label for="feedbackType">Type:</label>
+            <select name="feedbackType" id="feedbackType">
+                <optgroup label="Message">
+                    <option value="feedbackTypeMessageJust" selected>Just Message</option>
+                    <option value="feedbackTypeMessagePartnership">Partnership offer</option>
+                </optgroup>
+                <optgroup label="Report">
+                    <option value="feedbackTypeReportBug">Bug</option>
+                    <option value="feedbackTypeReportFeature">New feature offer</option>
+                    <option value="feedbackTypeMessage">Copyright violation</option>
+                </optgroup>
+            </select>
+            <br>
+
+            <input name="feedbackSubmit" type="submit" value="Submit message ">
+        </fieldset>
+    </form>
+
+
+    <div class="address">
+        <h2>Address</h2>
+        <div>
+            <i class="fas fa-phone"></i>
+            <b>Phone:</b>
+            <a href="tel:+79889960655">+7 988 99 606 55</a>
+        </div>
+
+        <div>
+            <i class="fas fa-map-marker-alt"></i>
+            <b>Address: </b>
+            Rostov-On-Don, Botanic st. 11
+        </div>
+
+        <div>
+            <i class="fas fa-at"></i>
+            <b>Email: </b>
+            <a href="mailto:spam@denis.tk">spam@denis.tk</a>
+        </div>
+
+        <div>
+            <i class="fab fa-telegram"></i>
+            <b>Telegram: </b>
+            <a href="https://t.me/DenisGeek" target="_blank">@DenisGeek</a>
+        </div>
+
+        <div>
+            <i class="fas fa-brain"></i>
+            <b>Geek Brains: </b>
+            <a href="https://geekbrains.ru/users/1603961" target="_blank">Account</a>
+        </div>
+    </div>
+
+    <div class="map">
+        <iframe src="https://www.google.com/maps/d/embed?mid=18khaskls-C3U4LD8V_M2bQG4750DQ5aN" width="640"
+                height="480">
+            Google maps: Location
+        </iframe>
+    </div>
+</main>
+
+<footer>
+    <hr>
+    <a href="https://ru.wikipedia.org/wiki/All_rights_reserved" target="_blank">
+        &copy; "All rights reserved"
+    </a>
+</footer>
+
 </body>
 
 </html>
