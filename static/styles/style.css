@@ -1,0 +1,273 @@
+/* less 
+http://lesscss.org/
+https://habr.com/post/136525/
+http://www.webmasters.by/articles/html-coding/2858-less.html
+*/
+/* region like #region in C#
+https://stackoverflow.com/questions/7519856/regions-in-css-like-c-sharp-regions
+*/
+/* CSS variable
+https://stackoverflow.com/questions/4847850/is-it-possible-to-define-constants-in-css
+*/
+/* footer to bottom of page
+http://dimox.name/press_footer_bottom_with_css/
+ */
+:root {
+  --mainBgColor: rgba(125, 185, 232, 0.8);
+  --mainNdColor: #000000;
+  --marginHorizontal: 5rem;
+}
+/* #region storeName */
+.storeName {
+  font-family: 'Shrikhand', cursive;
+  font-size: .8em;
+  color: darkblue;
+  text-align: right;
+  /* version */
+}
+.storeName:after {
+  content: "v2.4";
+}
+/* #endregion */
+/* #region mandatory */
+.container {
+  display: flex;
+  /*flex container*/
+  flex-direction: column;
+  /*flex direction*/
+  height: 100%;
+  width: 80%;
+  min-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  /*margin-left: var(--marginHorizontal);*/
+  /*margin-right: var(--marginHorizontal);*/
+}
+.header {
+  display: block;
+  height: 200px;
+  background-image: url("../images/logo/header.jpg");
+}
+.content {
+  flex-grow: 1;
+  /*fill 100% flex*/
+}
+/* #region footer */
+.footer a {
+  text-decoration: none;
+  color: var(--mainBgColor);
+}
+/* #endregion */
+/* #endregion mandatory */
+/* #region other */
+a:hover {
+  color: darkred !important;
+}
+body,
+html {
+  height: 100%;
+}
+body {
+  background: #f8f8f8;
+  /* background: linear-gradient(to bottom, var(--mainBgColor) 50%, var(--mainNdColor) 100%) no-repeat; */
+  background-attachment: fixed;
+}
+.intro {
+  font-family: 'Satisfy', cursive;
+  font-size: 3rem;
+  padding: 1rem;
+  text-align: justify;
+  /*margin: 1rem;*/
+  /*border-width: 1rem;*/
+}
+.currentPage {
+  font-family: 'Monoton', cursive;
+  /*font-family: 'Vast Shadow', cursive;*/
+  font-weight: normal;
+  text-align: center;
+}
+/* #endregion */
+/*#region navigation*/
+.navigation {
+  /*
+    list as flex container
+    using this:
+    https://www.w3schools.com/css/css3_flexbox.asp
+    https://www.w3schools.com/css/tryit.asp?filename=trycss3_flexbox_flex-wrap_wrap
+    */
+  display: flex;
+  flex-wrap: wrap;
+}
+.navigation li {
+  /*
+        list to like buttons,
+        using this : https: //www.w3schools.com/howto/howto_css_round_buttons.asp
+        https: //www.w3schools.com/howto/tryit.asp?filename=tryhow_css_round_buttons
+        */
+  list-style-type: none;
+  /*display: inline;*/
+  text-align: center;
+  padding: .5rem;
+  margin: .2rem;
+  width: 9rem;
+  border-radius: .5rem;
+  border: solid darkslateblue;
+}
+.navigation a {
+  /*font-family: 'Carter One', cursive;*/
+  font-family: 'Faster One', cursive;
+  font-size: 1.5rem;
+}
+/*#endregion*/
+/*#region feedbackForm*/
+/*
+*/
+.feedbackForm * {
+  margin: .2rem;
+}
+.feedbackForm legend {
+  font-family: 'Carter One', cursive;
+  /*text-align: center;*/
+  font-size: 1.3em;
+}
+.feedbackForm label {
+  font-family: 'Carter One', cursive;
+}
+.feedbackForm input,
+.feedbackForm textarea {
+  font-family: 'Raleway', sans-serif;
+  width: 40%;
+  min-width: 13rem;
+  text-transform: capitalize;
+}
+.feedbackForm input[type="submit"] {
+  font-family: 'Faster One', cursive;
+  font-size: 1.3em;
+}
+.feedbackForm input[type="email"]:focus {
+  color: whitesmoke;
+  background: darkslateblue;
+}
+.feedbackForm input[type="email"] {
+  text-transform: none;
+}
+/*#endregion*/
+/*#region address*/
+.address div i[class] {
+  color: darkblue;
+}
+.address b,
+.address a {
+  font-family: 'Raleway', sans-serif;
+}
+.address h2 {
+  padding: 0.1rem;
+  font-family: 'Fredericka the Great', cursive;
+  font-weight: normal;
+}
+/*#endregion*/
+/*#region catalog-product-container*/
+/*
+*/
+.catalogProductContainer {
+  background-color: gray;
+  margin: auto;
+  overflow: hidden;
+}
+.catalogProductUnit {
+  background: var(--mainBgColor);
+  width: 30%;
+  /*height: 150px;*/
+  padding-top: 20%;
+  margin-right: 5%;
+  margin-top: 1%;
+  float: left;
+}
+.catalogProductUnit:nth-child(-n+3) {
+  margin-top: 0;
+}
+.catalogProductUnit:nth-child(3n) {
+  margin-right: 0;
+}
+/*#endregion*/
+/*#region catalog-product*/
+.catalogProduct {
+  padding: .5rem;
+  margin: .2rem;
+  border-radius: .5rem;
+  border: solid darkslateblue;
+  font-family: 'Carter One', cursive;
+}
+.catalogProduct:hover {
+  border-color: transparent;
+}
+/*#endregion*/
+/*#region product*/
+/*
+*/
+.product p:first-letter {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: large;
+}
+.product h2 {
+  font-family: 'Carter One', cursive;
+  font-size: 18px;
+  font-weight: 400;
+  background: #eaeaea;
+}
+.product img {
+  padding: .5rem;
+  margin: .2rem;
+  border-radius: .5rem;
+  border: solid #707070;
+}
+.product img:hover {
+  border-color: transparent;
+}
+.productDescriptionShort p {
+  color: #454545;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 16px;
+}
+.productDescriptionDetail p {
+  color: #968d8d;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 24px;
+  text-align: left;
+}
+/*#region product characteristicsTable*/
+.characteristicsTable {
+  border-collapse: collapse;
+}
+.characteristicsTable,
+th,
+td {
+  border: 1px solid black;
+}
+.characteristicsTableVertical {
+  /*writing-mode: vertical-rl;*/
+  /*text-orientation: mixed;*/
+  transform: rotate(-90deg);
+}
+/*#endregion*/
+/*#endregion*/
+/*#region map scale */
+/*
+scale:
+https://stackoverflow.com/questions/20157752/set-height-to-percent-of-width
+*/
+.map {
+  position: relative;
+  padding-top: 50%;
+  /* Your percentage height of width*/
+}
+.map iframe {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+/*#endregion*/
