@@ -26,6 +26,7 @@
 
             <img src="{% static 'images/logo/carsShopLogo2.png' %}" alt="Logo" width="300">
 
+            <!--
             <nav>
                 <ul class="navigation">
                     <li><a href="{% url 'main' %}">Main</a></li>
@@ -33,11 +34,28 @@
                     <li><a href="{% url 'contact' %}">Contacts</a></li>
                 </ul>
                 <hr>
+            </nav> 
+            -->
+
+            <nav>
+                <ul class="navigation">
+                    {% for link in mainMenuLinks %}
+                    <li>
+                        <a href="{% url link.href %}">
+                            {{ link.name }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <hr>
             </nav>
+
         </header>
 
 
+        <ul>
 
+        </ul>
 
         <main class="content">
 
