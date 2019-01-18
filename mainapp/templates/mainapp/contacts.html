@@ -1,54 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<!--class="height100"-->
+{% extends "base_mainapp.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>LCS 1.4 - Contacts</title>
-    <link rel="shortcut icon" href="./images/logo/companyIcon.png">
-    <!--vector icons fontawesome.com-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
-        crossorigin="anonymous">
-    <!--googleFonts-->
-    <link href="https://fonts.googleapis.com/css?family=
-          Carter+One|Monoton|Satisfy|Shrikhand|Faster+One|Vast+Shadow|Raleway|Fredericka+the+Great"
-        rel="stylesheet">
-    <!--hw stile-->
-    <link rel="stylesheet" href="/static/styles/style.css">
-    <!--fun stile-->
-    <link rel="stylesheet" href="/static/styles/styleFun.css">
-</head>
-
-<body>
-
-    <header>
-        <div class="storeName">
-            <p>
-                Lovely Cars Store v1.4
-            </p>
-        </div>
-
-        <img src="/static/images/logo/carsShopLogo2.png" alt="Logo" width="300">
-
-
-        <nav>
-            <ul class="navigation">
-                <li><a href="/">Main</a></li>
-                <li><a href="products">Catalog</a></li>
-                <li><a href="contact">Contacts</a></li>
-            </ul>
-            <hr>
-        </nav>
-    </header>
-
-
-
-    <main>
-        <div>
-            <h1 class="currentPage">Contacts</h1>
-            <hr>
-        </div>
-
+{% block metaContent %}{% endblock %}
+{% block pageTitle %}Contacts{% endblock %}
+{% block pageName %}Contacts{% endblock %}
+{% block content %}
         <form class="feedbackForm" action="./cgi-bin/script.py" method="post">
             <fieldset>
                 <legend>Feedback</legend>
@@ -123,15 +78,4 @@
                 Google maps: Location
             </iframe>
         </div>
-    </main>
-
-    <footer>
-        <hr>
-        <a href="https://ru.wikipedia.org/wiki/All_rights_reserved" target="_blank">
-            &copy; "All rights reserved"
-        </a>
-    </footer>
-
-</body>
-
-</html>
+{% endblock %}

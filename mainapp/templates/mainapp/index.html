@@ -1,63 +1,13 @@
-﻿<!DOCTYPE html>
-{% load staticfiles %}
-<html lang="en">
+﻿{% extends "base_mainapp.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta content="There are cars that are impossible not to love. They are known to almost everyone, even people far from cars.">
-    <title>LCS 1.4 - Main</title>
-    <link rel="shortcut icon" href="{% static '/images/logo/companyIcon.png' %}">
-    <!--googleFonts-->
-    <link href="https://fonts.googleapis.com/css?family=
-          Carter+One|Monoton|Satisfy|Shrikhand|Faster+One|Vast+Shadow|Raleway|Fredericka+the+Great"
-        rel="stylesheet">
-    <!--hw stile-->
-    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
-</head>
-
-<body>
-    <div class="container">
-        <header>
-            <div class="storeName">
-                Store
-            </div>
-
-            <img src="{% static 'images/logo/carsShopLogo2.png' %}" alt="Logo" width="300">
-
-            <nav>
-                <ul class="navigation">
-                    <li><a href="{% url 'main' %}">Main</a></li>
-                    <li><a href="{% url 'products' %}">Catalog</a></li>
-                    <li><a href="{% url 'contact' %}">Contacts</a></li>
-                </ul>
-                <hr>
-            </nav>
-        </header>
-
-
-
-
-        <main class="content">
-
-            <div>
-                <h1 class="currentPage">Main</h1>
-                <hr>
-            </div>
-
-            <p class="intro">
-                There are cars that are impossible not to love. They are known to almost everyone, even people far from
-                cars.
-            </p>
-
-        </main>
-
-        <footer class="footer">
-            <hr>
-            <a href="https://ru.wikipedia.org/wiki/All_rights_reserved" target="_blank">
-                &copy; "All rights reserved"
-            </a>
-        </footer>
-    </div>
-</body>
-
-</html>
+{% block metaContent %}
+<meta content="There are cars that are impossible not to love. They are known to almost everyone, even people far from cars.">
+{% endblock %}
+{% block pageTitle %}Main{% endblock %}
+{% block pageName %}Main{% endblock %}
+{% block content %}
+<p class="intro">
+    There are cars that are impossible not to love. They are known to almost everyone, even people far from
+    cars.
+</p>
+{% endblock %}
