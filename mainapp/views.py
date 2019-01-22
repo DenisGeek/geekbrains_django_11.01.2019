@@ -55,5 +55,5 @@ def load_xls(request):
     df = xl_io_db.read2data_frame(file_path)  # get data fro xls
     xl_io_db.simple_like_console(df)  # write data to db
 
-    main(request)  # emulate jump to main
+    return main(request)  # emulate jump to main
 
