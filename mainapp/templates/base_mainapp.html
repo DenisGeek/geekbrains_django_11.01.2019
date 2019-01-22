@@ -7,7 +7,7 @@
     {% block metaContent %}
     <meta content="There are cars that are impossible not to love. They are known to almost everyone, even people far from cars.">
     {% endblock %}
-    <title>LCS 1.4 - {% block pageTitle %}Main{% endblock %}</title>
+    <title>LCS 1.4 - {{pageTitle}}</title>
     <link rel="shortcut icon" href="{% static '/images/logo/companyIcon.png' %}">
     <!--googleFonts-->
     <link href="https://fonts.googleapis.com/css?family=
@@ -25,17 +25,6 @@
             </div>
 
             <img src="{% static 'images/logo/carsShopLogo2.png' %}" alt="Logo" width="300">
-
-            <!--
-            <nav>
-                <ul class="navigation">
-                    <li><a href="{% url 'main' %}">Main</a></li>
-                    <li><a href="{% url 'products' %}">Catalog</a></li>
-                    <li><a href="{% url 'contact' %}">Contacts</a></li>
-                </ul>
-                <hr>
-            </nav> 
-            -->
 
             <nav>
                 <ul class="navigation">
@@ -61,7 +50,7 @@
 
 
             <div>
-                <h1 class="currentPage">{% block pageName %}Main{% endblock %}</h1>
+                <h1 class="currentPage">{{pageTitle}}</h1>
                 <hr>
             </div>
 

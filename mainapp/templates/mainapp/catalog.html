@@ -1,27 +1,43 @@
 {% extends "base_mainapp.html" %}
 
 {% block metaContent %}{% endblock %}
-{% block pageTitle %}Catalog{% endblock %}
-{% block pageName %}Catalog{% endblock %}
 
 {% block content %}
-        <div class="catalogProduct">
-            <a href="./products/product_1.html">
-                <img src="/static/images/products/product_1.jpg" alt="Ford Mustang Shelby GT500 '67" title="Ford Mustang Shelby GT500 '67"
-                    width="150">
-            </a>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            <a href="./products/product_1.html">Ford Mustang Shelby GT500 1967 Eleanor</a>
-            <br>
-        </div>
 
-        <div class="catalogProduct">
-            <a href="./products/product_2.html">
-                <img src="/static/images/products/product_2.jpg" alt="Ford Mustang Shelby GT500 2008 Super Snake" title="Ford Mustang Shelby GT500 2008 Super Snake"
-                    width="150">
-            </a>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            <a href="./products/product_2.html">Ford Mustang Shelby GT500 2008 Super Snake</a>
-            <br>
-        </div>
+{% for product in products %}
+<!--{{ product.name }}-->
+<div class="catalogProduct">
+    <a href="">
+        <img src="{{ mediaUrl }}{{ product.image }}" alt="{{ product.name }}"
+             title="{{ product.name }}"
+             width="150">
+    </a>
+    <p>{{ product.descriptionShort }}</p>
+    <!--<a href="">{{ product.name }}({{ product.categoryId.name }})</a>-->
+    <a href="">{{ product }}</a>
+    <br>
+</div>
+{% endfor %}
+<!--
+<div class="catalogProduct">
+    <a href="./products/product_1.html">
+        <img src="/static/images/products/product_1.jpg" alt="Ford Mustang Shelby GT500 '67"
+             title="Ford Mustang Shelby GT500 '67"
+             width="150">
+    </a>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <a href="./products/product_1.html">Ford Mustang Shelby GT500 1967 Eleanor</a>
+    <br>
+</div>
+
+<div class="catalogProduct">
+    <a href="./products/product_2.html">
+        <img src="/static/images/products/product_2.jpg" alt="Ford Mustang Shelby GT500 2008 Super Snake"
+             title="Ford Mustang Shelby GT500 2008 Super Snake"
+             width="150">
+    </a>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <a href="./products/product_2.html">Ford Mustang Shelby GT500 2008 Super Snake</a>
+    <br>
+</div>-->
 {% endblock %}
