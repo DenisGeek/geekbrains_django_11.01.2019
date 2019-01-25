@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.conf import settings
 from .models import ProductCategory, Product
-from .pl import ExcelIoModelDB
+from .XL2DB import ExcelIoModelDB
 
 # Create your views here.
 pageTitles = {
