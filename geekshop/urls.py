@@ -27,7 +27,8 @@ urlpatterns = [
     # path('products/', mainapp.products, name='products'),
     path('products/', include('mainapp.urls', namespace='products')),
     path('contact/', mainapp.contact, name='contact'),
-    path('load_xls/', mainapp.load_xls, name='load_xls')
+    path('load_xls/', mainapp.load_xls, name='load_xls'),
+    path('auth/', include('authapp.urls', namespace='auth')),
 ]
 
 # if settings.DEBUG:
