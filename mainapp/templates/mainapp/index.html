@@ -1,4 +1,5 @@
 ﻿{% extends "base_mainapp.html" %}
+{% url 'auth:edit' %}
 
 {% block metaContent %}
 <meta content="There are cars that are impossible not to love. They are known to almost everyone, even people far from cars.">
@@ -6,14 +7,20 @@
 
 {% block content %}
 
-<!--
-<form action="" method="post">
-    <input type="submit" name="upvote" value="Upvote" />
-</form>
-
-<form action="" method="post">
-    <button name="LoadExcel" value="upvote">Upvote</button>
-</form>-->
+{% if user.is_authenticated %}
+<li>
+    <a href="{% url 'auth:edit' %}">
+        {{ user.first_name|default:'Пользователь' }}
+    </a>
+</li>
+{% endif %}
+<li>
+    {% if user.is_authenticated %}
+      <a href="{% url 'auth:logout' %}">выйти</a>
+    {% else %}
+      <a href="{% url 'auth:login' %}">войти</a>
+    {% endif %}
+</li>
 
 <p class="intro">
     There are cars that are impossible not to love. They are known to almost everyone, even people far from
